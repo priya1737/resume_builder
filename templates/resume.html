@@ -1,0 +1,57 @@
+<article class="resume-card">
+  <header>
+    <h1>{{ resume_data.name }}</h1>
+    <p>{{ resume_data.email }}{% if resume_data.phone %} | {{ resume_data.phone }}{% endif %}</p>
+  </header>
+
+  {% if resume_data.summary %}
+  <section>
+    <h3>Summary</h3>
+    <p>{{ resume_data.summary }}</p>
+  </section>
+  {% endif %}
+
+  {% if resume_data.skills %}
+  <section>
+    <h3>Skills</h3>
+    <ul>
+      {% for skill in resume_data.skills %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if resume_data.experience %}
+  <section>
+    <h3>Experience</h3>
+    <ul>
+      {% for item in resume_data.experience %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if resume_data.education %}
+  <section>
+    <h3>Education</h3>
+    <ul>
+      {% for item in resume_data.education %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if resume_data.projects %}
+  <section>
+    <h3>Projects</h3>
+    <ul>
+      {% for item in resume_data.projects %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
